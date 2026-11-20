@@ -11,7 +11,7 @@ COPY . .
 # Bypass CRA ESLint dependency preflight check
 ENV SKIP_PREFLIGHT_CHECK=true
 
-RUN npm run build
+RUN NODE_OPTIONS=--openssl-legacy-provider npm run build
 
 # Stage 2: Serve using Nginx
 FROM nginx:alpine
